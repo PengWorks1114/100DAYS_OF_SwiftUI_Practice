@@ -1,0 +1,69 @@
+How to store ordered data in arrays:
+
+``` Swift
+var beatles = ["John", "Paul", "George", "Ringo"] // Array of Strings
+let numbers = [4, 5, 15, 16, 23, 42] // Array of integers
+var temperatures = [25.3, 28.2, 26.4] // Array of decimals
+
+print(beatles[0]) // John
+
+// 要怎麼加入元素到array => append
+
+beatles.append("Adrian")
+
+var scores = Array<Int>() //宣告這個array必須是Int
+scores.append(100)
+scires.append(80)
+scires.append(85)
+print(scores[1])
+
+var albums = Array<String>()
+albums.append("Folklore")
+albums.append("Fearless")
+albums.append("Red")
+// 因為Araay<String>實在太常見了所以可以用另一種寫法
+// var albums = [String]()
+
+// 實用 method
+print(albums.count) // 3; 計算裡面物件數量
+
+var characters = ["Luna", "Pam", "Ray", "Sterling"]
+print(characters.count)
+
+// 移除裡面方法
+characters.remove(at: 2) //Ray has been removed
+
+// 全部移除
+characters.removeAll()
+print(characters.count) // 0
+
+// 是否含有
+let bondMovies = ["Casino Royal", "Spectre", "No time to die"]
+print(bondMovies.contains("Frozen")) // false 不包含
+
+
+// 排序
+let cities = ["London", "Tokyo", "Rome", "Budapest"]
+print(cities.sorted()) // B>L>R>T照這樣排序
+
+// 逆轉排序
+let presidents = ["Bush", "Obama", "Trump", "Biden"]
+let reversedPresidents = presidents.reversed()
+
+print(presidents)          // ["Bush", "Obama", "Trump", "Biden"]
+print(reversedPresidents)  // ["Biden", "Trump", "Obama", "Bush"]
+
+// 如果想要 Array
+let reversedArray = Array(reversedPresidents)
+print(reversedArray)       // ["Biden", "Trump", "Obama", "Bush"]
+
+
+在 Swift 裡，reversed() 是一個 方法，會回傳該集合（Array、String 等）逆序排列的結果，但要注意兩點：
+
+不會改變原本的陣列（presidents 還是照原本順序）。
+
+回傳型別是 ReversedCollection<[String]>
+也就是一個反轉後的「序列視圖」，並不是直接變成一個新的 Array。
+如果你想要真正得到一個新的反轉後的陣列，需要用 Array(reversedPresidents)。
+
+```
